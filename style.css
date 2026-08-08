@@ -643,9 +643,16 @@ footer p {
     .search-box {
         flex-direction: column;
     }
-
+    
     .card-btn {
     display: inline-block;
     text-decoration: none;
     color: #001015;
+    }
+  
+    .profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
