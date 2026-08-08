@@ -504,165 +504,204 @@ font-size: 13px;
 }
 
 
-/* BOT */
+/* ==============================
+ZENTRYBOT — FASE 5
+============================== */
 
 .bot-box {
-    max-width: 950px;
+max-width: 950px;
 
-    margin: auto;
+margin: auto;
 
-    display: flex;
-    align-items: center;
-    gap: 30px;
+display: flex;
+align-items: center;
+gap: 30px;
 
-    padding: 40px;
+padding: 40px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #111923,
-            #11141d
-        );
+background:
+    radial-gradient(
+        circle at top right,
+        rgba(0, 229, 255, 0.12),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #111923,
+        #0d1018
+    );
 
-    border: 1px solid #263746;
+border: 1px solid #263746;
 
-    border-radius: 20px;
+border-radius: 24px;
+
+position: relative;
+overflow: hidden;
+
+box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+
 }
 
 .bot-avatar {
-    min-width: 100px;
-    height: 100px;
+min-width: 110px;
+width: 110px;
+height: 110px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
 
-    font-size: 55px;
+font-size: 58px;
 
-    background: #071a20;
+background:
+    radial-gradient(
+        circle,
+        #102a32,
+        #071217
+    );
 
-    border: 1px solid #00e5ff;
+border: 2px solid #00e5ff;
 
-    border-radius: 50%;
+border-radius: 50%;
+
+box-shadow:
+    0 0 25px rgba(0, 229, 255, 0.18);
+
+animation: botPulse 3s ease-in-out infinite;
+
+}
+
+@keyframes botPulse {
+
+0%, 100% {
+    box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.15);
+}
+
+50% {
+    box-shadow:
+        0 0 35px rgba(0, 229, 255, 0.35);
+}
+
 }
 
 .bot-content {
-    flex: 1;
+flex: 1;
 }
 
 .bot-content h2 {
-    font-size: 32px;
-    margin-bottom: 8px;
+font-size: 32px;
+margin-bottom: 8px;
 }
 
 .bot-content p {
-    color: #999;
-    margin-bottom: 20px;
+color: #999;
+margin-bottom: 20px;
 }
 
 .bot-input {
-    display: flex;
-    gap: 10px;
+display: flex;
+gap: 10px;
 }
 
-.bot-input input,
-.search-box input {
-    flex: 1;
+.bot-input input {
+flex: 1;
 
-    padding: 13px 15px;
+padding: 14px 16px;
 
-    background: #090b10;
+background: #080b10;
 
-    color: white;
+color: white;
 
-    border: 1px solid #303646;
+border: 1px solid #303646;
 
-    border-radius: 9px;
+border-radius: 10px;
 
-    outline: none;
+outline: none;
+
+transition: 0.3s;
+
 }
 
-.bot-input input:focus,
-.search-box input:focus {
-    border-color: #00e5ff;
+.bot-input input:focus {
+border-color: #00e5ff;
+
+box-shadow:
+    0 0 15px rgba(0, 229, 255, 0.08);
+
 }
 
-.bot-input button,
-.search-box button {
-    padding: 12px 20px;
+.bot-input button {
+padding: 13px 22px;
 
-    background: #00e5ff;
+background: #00e5ff;
 
-    border: none;
+color: #001015;
 
-    border-radius: 9px;
+border: none;
 
-    font-weight: bold;
+border-radius: 10px;
 
-    cursor: pointer;
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.3s;
+
+}
+
+.bot-input button:hover {
+transform: translateY(-2px);
+
+box-shadow:
+    0 8px 20px rgba(0, 229, 255, 0.2);
+
 }
 
 .bot-response {
-    margin-top: 15px;
+min-height: 25px;
 
-    color: #00e5ff;
+margin-top: 18px;
+
+padding: 12px 15px;
+
+color: #00e5ff;
+
+background: rgba(0, 229, 255, 0.04);
+
+border-left: 3px solid #00e5ff;
+
+border-radius: 6px;
+
 }
 
+@media (max-width: 600px) {
 
-/* BUSCADOR */
-
-.search-section {
-    padding: 70px 5%;
-
-    text-align: center;
-
-    background: #080a10;
+.bot-box {
+    padding: 30px 20px;
 }
 
-.search-section h2 {
-    margin-bottom: 25px;
+.bot-avatar {
+    min-width: 90px;
+    width: 90px;
+    height: 90px;
+
+    font-size: 48px;
 }
 
-.search-box {
-    max-width: 700px;
-
-    margin: auto;
-
-    display: flex;
-    gap: 10px;
+.bot-content h2 {
+    font-size: 27px;
 }
 
-#searchResult {
-    margin-top: 20px;
-    color: #00e5ff;
+.bot-input {
+    flex-direction: column;
 }
 
-
-/* FOOTER */
-
-footer {
-    padding: 40px 20px;
-
-    text-align: center;
-
-    background: #0a0c11;
-
-    border-top: 1px solid #202431;
+.bot-input button {
+    width: 100%;
 }
 
-.footer-logo {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-footer p {
-    color: #777;
-}
-
-.copyright {
-    margin-top: 15px;
-    font-size: 12px;
 }
 
 
