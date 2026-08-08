@@ -200,35 +200,65 @@ if (startQuiz && quizArea) {
 // NOTIFICACIONES
 // ==============================
 
-function toggleNotifications() {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const panel = document.getElementById("notificationPanel");
+    const notificationPanel =
+        document.getElementById("notificationPanel");
 
-    if (!panel) {
-        console.log("❌ No se encontró el panel de notificaciones");
-        return;
+    const closeNotifications =
+        document.getElementById("closeNotifications");
+
+
+    // Abrir / cerrar notificaciones
+    window.toggleNotifications = function () {
+
+        if (!notificationPanel) {
+            console.error(
+                "❌ ZentryGames: No se encontró #notificationPanel"
+            );
+            return;
+        }
+
+        notificationPanel.classList.toggle("show");
+
+    };
+
+
+    // Botón X
+    if (closeNotifications) {
+
+        closeNotifications.addEventListener("click", () => {
+
+            notificationPanel.classList.remove("show");
+
+        });
+
     }
 
-    panel.classList.toggle("show");
-}
 
+    // Cerrar al hacer clic fuera del panel
+    document.addEventListener("click", (event) => {
 
-const closeNotifications =
-    document.getElementById("closeNotifications");
+        if (!notificationPanel) return;
 
-if (closeNotifications) {
+        const notificationButton =
+            document.querySelector(
+                '[onclick="toggleNotifications()"]'
+            );
 
-    closeNotifications.addEventListener("click", function () {
+        if (
+            notificationPanel.classList.contains("show") &&
+            !notificationPanel.contains(event.target) &&
+            event.target !== notificationButton
+        ) {
 
-        const panel =
-            document.getElementById("notificationPanel");
+            notificationPanel.classList.remove("show");
 
-        if (panel) {
-            panel.classList.remove("show");
         }
 
     });
 
-}
+});
 
-console.log("🔔 Sistema de notificaciones cargado");
+
+console.log("🔔 Sistema de notificaciones cargado correctamente"); 
