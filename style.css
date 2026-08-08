@@ -87,7 +87,9 @@ body {
 }
 
 
-/* HERO */
+/* ==============================
+   HERO — FASE 5
+   ============================== */
 
 .hero {
     min-height: 85vh;
@@ -98,62 +100,163 @@ body {
 
     text-align: center;
 
-    padding: 50px 20px;
+    padding: 70px 20px;
+
+    position: relative;
+    overflow: hidden;
 
     background:
-        radial-gradient(circle at center, #14212d, #07080d 65%);
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(0, 229, 255, 0.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 229, 255, 0.06),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #090c13 0%,
+            #07080d 100%
+        );
+}
+
+/* Luz decorativa del fondo */
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: -180px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background: #00e5ff;
+
+    opacity: 0.035;
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+/* Segunda luz */
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    bottom: -150px;
+    left: -100px;
+
+    border-radius: 50%;
+
+    background: #00e5ff;
+
+    opacity: 0.025;
+
+    filter: blur(15px);
+
+    pointer-events: none;
 }
 
 .hero-content {
-    max-width: 850px;
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 1;
+
+    animation: heroAppear 0.8s ease;
 }
 
 .badge {
     display: inline-block;
 
-    padding: 7px 14px;
+    padding: 8px 16px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
-    border: 1px solid #00e5ff;
+    border: 1px solid rgba(0, 229, 255, 0.7);
+
     border-radius: 50px;
 
     color: #00e5ff;
 
+    background: rgba(0, 229, 255, 0.04);
+
     font-size: 12px;
     font-weight: bold;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+
+    box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.08);
 }
 
 .hero h1 {
-    font-size: clamp(42px, 7vw, 80px);
-    line-height: 1.05;
+    font-size: clamp(45px, 8vw, 82px);
+
+    line-height: 1.02;
 
     margin-bottom: 25px;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 0 30px rgba(0, 229, 255, 0.08);
 }
 
 .hero h1 span {
     color: #00e5ff;
+
+    text-shadow:
+        0 0 25px rgba(0, 229, 255, 0.25);
 }
 
 .hero p {
     max-width: 650px;
 
-    margin: auto;
-    margin-bottom: 30px;
+    margin: 0 auto 32px;
 
-    color: #aaa;
+    color: #9299a8;
+
     font-size: 18px;
 }
 
 .hero-buttons {
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
+/* Entrada suave */
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
 
 /* BOTONES */
 
