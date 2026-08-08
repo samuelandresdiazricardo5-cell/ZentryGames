@@ -200,24 +200,24 @@ if (startQuiz && quizArea) {
 // NOTIFICACIONES
 // ==============================
 
-const notificationBtn =
-    document.getElementById("notificationBtn");
+function toggleNotifications() {
 
-const notificationPanel =
-    document.getElementById("notificationPanel");
+    const panel = document.getElementById("notificationPanel");
+
+    if (!panel) {
+        console.log("❌ No se encontró notificationPanel");
+        return;
+    }
+
+    panel.classList.toggle("show");
+
+}
 
 const closeNotifications =
     document.getElementById("closeNotifications");
 
-if (notificationBtn && notificationPanel) {
-
-    notificationBtn.addEventListener("click", () => {
-
-        notificationPanel.classList.toggle("show");
-
-    });
-
-}
+const notificationPanel =
+    document.getElementById("notificationPanel");
 
 if (closeNotifications && notificationPanel) {
 
@@ -230,14 +230,3 @@ if (closeNotifications && notificationPanel) {
 }
 
 console.log("🔔 Sistema de notificaciones cargado");
-function toggleNotifications() {
-
-    const panel = document.getElementById("notificationPanel");
-
-    if (!panel) {
-        alert("❌ No se encontró el panel de notificaciones");
-        return;
-    }
-
-    panel.classList.toggle("show");
-}
