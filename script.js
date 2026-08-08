@@ -195,7 +195,6 @@ if (startQuiz && quizArea) {
 
 }
 
-
 // ==============================
 // NOTIFICACIONES
 // ==============================
@@ -205,12 +204,11 @@ function toggleNotifications() {
     const panel = document.getElementById("notificationPanel");
 
     if (!panel) {
-        console.log("❌ No se encontró notificationPanel");
+        console.log("❌ No se encontró el panel");
         return;
     }
 
     panel.classList.toggle("show");
-
 }
 
 const closeNotifications =
@@ -221,7 +219,7 @@ const notificationPanel =
 
 if (closeNotifications && notificationPanel) {
 
-    closeNotifications.addEventListener("click", () => {
+    closeNotifications.addEventListener("click", function () {
 
         notificationPanel.classList.remove("show");
 
