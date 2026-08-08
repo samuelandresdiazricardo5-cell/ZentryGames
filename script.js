@@ -180,3 +180,20 @@ function quizAnswer(correcto) {
     }
 
 }
+
+
+// ==============================
+// NOTIFICACIONES
+// ==============================
+
+const notificationBtn = document.getElementById("notificationBtn");
+const notificationPanel = document.getElementById("notificationPanel");
+const closeNotifications = document.getElementById("closeNotifications");
+
+notificationBtn.addEventListener("click", () => {
+    notificationPanel.classList.toggle("show");
+});
+
+closeNotifications.addEventListener("click", () => {
+    notificationPanel.classList.remove("show");
+});
