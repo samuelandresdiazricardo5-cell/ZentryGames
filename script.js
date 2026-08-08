@@ -137,7 +137,7 @@ function buscar() {
 
 
 // ==============================
-// QUIZ
+// ZENTRY QUIZ
 // ==============================
 
 const startQuiz = document.getElementById("startQuiz");
@@ -170,12 +170,12 @@ function quizAnswer(correcto) {
     if (correcto) {
 
         quizArea.innerHTML =
-            "🎉 ¡Correcto! ¡Buen trabajo gamer!";
+            "🎉 ¡Correcto! ¡Buen trabajo, gamer!";
 
     } else {
 
         quizArea.innerHTML =
-            "❌ Incorrecto. ¡Inténtalo de nuevo!";
+            "❌ Incorrecto. Inténtalo nuevamente.";
 
     }
 
