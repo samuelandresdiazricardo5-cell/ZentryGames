@@ -1,1 +1,165 @@
+<!DOCTYPE html><html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Perfil | ZentryGames</title>
 
+<link rel="stylesheet" href="style.css">
+
+</head><body><header class="header"><div class="logo">
+    🎮 <span>ZentryGames</span>
+</div>
+
+<nav class="nav">
+    <a href="index.html">🏠 Inicio</a>
+    <a href="cod.html">🔫 COD</a>
+    <a href="fc.html">⚽ FC</a>
+    <a href="roblox.html">🟥 Roblox</a>
+</nav>
+
+</header><main><section class="section">
+
+    <div class="profile-box">
+
+        <div class="profile-avatar">
+            👤
+        </div>
+
+        <span class="badge">
+            🎮 ZENTRYGAMES
+        </span>
+
+        <h1>Mi perfil</h1>
+
+        <p>
+            Personaliza tu experiencia gamer.
+        </p>
+
+
+        <div class="profile-form">
+
+            <label for="username">
+                Nombre gamer
+            </label>
+
+            <input
+                id="username"
+                type="text"
+                placeholder="Escribe tu nombre"
+                maxlength="20"
+            >
+
+
+            <label for="favoriteGame">
+                Juego favorito
+            </label>
+
+            <select id="favoriteGame">
+
+                <option value="">
+                    Selecciona un juego
+                </option>
+
+                <option value="Call of Duty">
+                    🔫 Call of Duty
+                </option>
+
+                <option value="EA SPORTS FC">
+                    ⚽ EA SPORTS FC
+                </option>
+
+                <option value="Roblox">
+                    🟥 Roblox
+                </option>
+
+            </select>
+
+
+            <button id="saveProfile" class="btn primary">
+                💾 Guardar perfil
+            </button>
+
+        </div>
+
+
+        <div id="profileResult"></div>
+
+    </div>
+
+</section>
+
+</main><footer><div class="footer-logo">
+    🎮 ZentryGames
+</div>
+
+<p>
+    Tu zona gamer. Noticias, juegos y diversión.
+</p>
+
+<p class="copyright">
+    © 2026 ZentryGames
+</p>
+
+</footer><script>
+
+const username = document.getElementById("username");
+const favoriteGame = document.getElementById("favoriteGame");
+const saveProfile = document.getElementById("saveProfile");
+const profileResult = document.getElementById("profileResult");
+
+
+// Cargar perfil guardado
+
+const savedName = localStorage.getItem("zentryUsername");
+const savedGame = localStorage.getItem("zentryFavoriteGame");
+
+if (savedName) {
+    username.value = savedName;
+}
+
+if (savedGame) {
+    favoriteGame.value = savedGame;
+}
+
+
+// Guardar perfil
+
+saveProfile.addEventListener("click", () => {
+
+    const name = username.value.trim();
+    const game = favoriteGame.value;
+
+    if (!name) {
+
+        profileResult.textContent =
+            "⚠️ Escribe un nombre gamer.";
+
+        return;
+    }
+
+    if (!game) {
+
+        profileResult.textContent =
+            "⚠️ Selecciona tu juego favorito.";
+
+        return;
+    }
+
+
+    localStorage.setItem(
+        "zentryUsername",
+        name
+    );
+
+    localStorage.setItem(
+        "zentryFavoriteGame",
+        game
+    );
+
+
+    profileResult.textContent =
+        `✅ Perfil guardado. ¡Bienvenido, ${name}!`;
+
+});
+
+</script></body>
+</html>
