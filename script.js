@@ -13,7 +13,9 @@ gameButtons.forEach((button) => {
 
         const game = button.dataset.game;
 
-        alert(`🎮 Entraste a la sección de ${game}`);
+        if (game) {
+            alert(`🎮 Entraste a la sección de ${game}`);
+        }
 
     });
 
@@ -28,57 +30,61 @@ const botInput = document.getElementById("botInput");
 const botSend = document.getElementById("botSend");
 const botResponse = document.getElementById("botResponse");
 
-function responderBot() {
+if (botInput && botSend && botResponse) {
 
-    const pregunta = botInput.value.toLowerCase().trim();
+    function responderBot() {
 
-    if (!pregunta) {
-        botResponse.textContent =
-            "🤖 Escribe una pregunta primero.";
-        return;
+        const pregunta = botInput.value.toLowerCase().trim();
+
+        if (!pregunta) {
+            botResponse.textContent =
+                "🤖 Escribe una pregunta primero.";
+            return;
+        }
+
+        if (
+            pregunta.includes("call of duty") ||
+            pregunta.includes("cod")
+        ) {
+
+            botResponse.textContent =
+                "🤖 Puedo ayudarte con Call of Duty, modos, armas y novedades.";
+
+        } else if (
+            pregunta.includes("fifa") ||
+            pregunta.includes("fc")
+        ) {
+
+            botResponse.textContent =
+                "🤖 Puedo ayudarte con EA SPORTS FC, equipos, jugadores y fútbol.";
+
+        } else if (
+            pregunta.includes("roblox")
+        ) {
+
+            botResponse.textContent =
+                "🤖 Puedo ayudarte con Roblox, experiencias y novedades.";
+
+        } else {
+
+            botResponse.textContent =
+                "🤖 Todavía estoy aprendiendo. Prueba preguntando sobre Call of Duty, EA SPORTS FC o Roblox.";
+
+        }
+
     }
 
-    if (
-        pregunta.includes("call of duty") ||
-        pregunta.includes("cod")
-    ) {
+    botSend.addEventListener("click", responderBot);
 
-        botResponse.textContent =
-            "🤖 Puedo ayudarte con Call of Duty, modos, armas y novedades.";
+    botInput.addEventListener("keydown", (event) => {
 
-    } else if (
-        pregunta.includes("fifa") ||
-        pregunta.includes("fc")
-    ) {
+        if (event.key === "Enter") {
+            responderBot();
+        }
 
-        botResponse.textContent =
-            "🤖 Puedo ayudarte con EA SPORTS FC, equipos, jugadores y fútbol.";
-
-    } else if (
-        pregunta.includes("roblox")
-    ) {
-
-        botResponse.textContent =
-            "🤖 Puedo ayudarte con Roblox, experiencias y novedades.";
-
-    } else {
-
-        botResponse.textContent =
-            "🤖 Todavía estoy aprendiendo. Prueba preguntando sobre Call of Duty, EA SPORTS FC o Roblox.";
-
-    }
+    });
 
 }
-
-botSend.addEventListener("click", responderBot);
-
-botInput.addEventListener("keydown", (event) => {
-
-    if (event.key === "Enter") {
-        responderBot();
-    }
-
-});
 
 
 // ==============================
@@ -89,49 +95,53 @@ const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const searchResult = document.getElementById("searchResult");
 
-searchButton.addEventListener("click", buscar);
+if (searchInput && searchButton && searchResult) {
 
-searchInput.addEventListener("keydown", (event) => {
+    function buscar() {
 
-    if (event.key === "Enter") {
-        buscar();
-    }
+        const texto = searchInput.value.toLowerCase().trim();
 
-});
+        if (!texto) {
 
-function buscar() {
+            searchResult.textContent =
+                "🔎 Escribe algo para buscar.";
 
-    const texto = searchInput.value.toLowerCase().trim();
+            return;
+        }
 
-    if (!texto) {
+        if (texto.includes("call") || texto.includes("cod")) {
 
-        searchResult.textContent =
-            "🔎 Escribe algo para buscar.";
+            searchResult.textContent =
+                "🔫 Encontramos contenido relacionado con Call of Duty.";
 
-        return;
-    }
+        } else if (texto.includes("fifa") || texto.includes("fc")) {
 
-    if (texto.includes("call") || texto.includes("cod")) {
+            searchResult.textContent =
+                "⚽ Encontramos contenido relacionado con EA SPORTS FC.";
 
-        searchResult.textContent =
-            "🔫 Encontramos contenido relacionado con Call of Duty.";
+        } else if (texto.includes("roblox")) {
 
-    } else if (texto.includes("fifa") || texto.includes("fc")) {
+            searchResult.textContent =
+                "🟥 Encontramos contenido relacionado con Roblox.";
 
-        searchResult.textContent =
-            "⚽ Encontramos contenido relacionado con EA SPORTS FC.";
+        } else {
 
-    } else if (texto.includes("roblox")) {
+            searchResult.textContent =
+                "❌ No encontramos resultados.";
 
-        searchResult.textContent =
-            "🟥 Encontramos contenido relacionado con Roblox.";
-
-    } else {
-
-        searchResult.textContent =
-            "❌ No encontramos resultados.";
+        }
 
     }
+
+    searchButton.addEventListener("click", buscar);
+
+    searchInput.addEventListener("keydown", (event) => {
+
+        if (event.key === "Enter") {
+            buscar();
+        }
+
+    });
 
 }
 
@@ -143,41 +153,45 @@ function buscar() {
 const startQuiz = document.getElementById("startQuiz");
 const quizArea = document.getElementById("quizArea");
 
-startQuiz.addEventListener("click", () => {
+if (startQuiz && quizArea) {
 
-    quizArea.innerHTML = `
-        <h3>🧠 ¿Cuál de estos juegos pertenece a Activision?</h3>
+    startQuiz.addEventListener("click", () => {
 
-        <br>
+        quizArea.innerHTML = `
+            <h3>🧠 ¿Cuál de estos juegos pertenece a Activision?</h3>
 
-        <button onclick="quizAnswer(true)">
-            🔫 Call of Duty
-        </button>
+            <br>
 
-        <button onclick="quizAnswer(false)">
-            🟥 Roblox
-        </button>
+            <button onclick="quizAnswer(true)">
+                🔫 Call of Duty
+            </button>
 
-        <button onclick="quizAnswer(false)">
-            ⚽ EA SPORTS FC
-        </button>
-    `;
+            <button onclick="quizAnswer(false)">
+                🟥 Roblox
+            </button>
 
-});
+            <button onclick="quizAnswer(false)">
+                ⚽ EA SPORTS FC
+            </button>
+        `;
 
-function quizAnswer(correcto) {
+    });
 
-    if (correcto) {
+    window.quizAnswer = function(correcto) {
 
-        quizArea.innerHTML =
-            "🎉 ¡Correcto! ¡Buen trabajo, gamer!";
+        if (correcto) {
 
-    } else {
+            quizArea.innerHTML =
+                "🎉 ¡Correcto! ¡Buen trabajo, gamer!";
 
-        quizArea.innerHTML =
-            "❌ Incorrecto. Inténtalo nuevamente.";
+        } else {
 
-    }
+            quizArea.innerHTML =
+                "❌ Incorrecto. Inténtalo nuevamente.";
+
+        }
+
+    };
 
 }
 
@@ -186,14 +200,33 @@ function quizAnswer(correcto) {
 // NOTIFICACIONES
 // ==============================
 
-const notificationBtn = document.getElementById("notificationBtn");
-const notificationPanel = document.getElementById("notificationPanel");
-const closeNotifications = document.getElementById("closeNotifications");
+const notificationBtn =
+    document.getElementById("notificationBtn");
 
-notificationBtn.addEventListener("click", () => {
-    notificationPanel.classList.toggle("show");
-});
+const notificationPanel =
+    document.getElementById("notificationPanel");
 
-closeNotifications.addEventListener("click", () => {
-    notificationPanel.classList.remove("show");
-});
+const closeNotifications =
+    document.getElementById("closeNotifications");
+
+if (notificationBtn && notificationPanel) {
+
+    notificationBtn.addEventListener("click", () => {
+
+        notificationPanel.classList.toggle("show");
+
+    });
+
+}
+
+if (closeNotifications && notificationPanel) {
+
+    closeNotifications.addEventListener("click", () => {
+
+        notificationPanel.classList.remove("show");
+
+    });
+
+}
+
+console.log("🔔 Sistema de notificaciones cargado");
