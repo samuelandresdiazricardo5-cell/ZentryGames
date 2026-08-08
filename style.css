@@ -649,10 +649,40 @@ footer p {
     text-decoration: none;
     color: #001015;
     }
-  
-    .profile-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    
+      .profile-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+}
+
+/* ==============================
+   NOTIFICACIONES
+   ============================== */
+
+.notification-panel {
+    display: none;
+
+    position: fixed;
+    top: 80px;
+    right: 25px;
+
+    width: 330px;
+
+    background: #11141d;
+    color: white;
+
+    border: 1px solid #00e5ff;
+    border-radius: 15px;
+
+    padding: 20px;
+
+    z-index: 9999;
+}
+
+.notification-panel.show {
+    display: block;
 }
