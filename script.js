@@ -23,7 +23,7 @@ gameButtons.forEach((button) => {
 
 
 // ==============================
-// ZENTRYBOT
+// ZENTRYBOT — FASE 5
 // ==============================
 
 const botInput = document.getElementById("botInput");
@@ -32,60 +32,124 @@ const botResponse = document.getElementById("botResponse");
 
 if (botInput && botSend && botResponse) {
 
-    function responderBot() {
+function responderBot() {
 
-        const pregunta = botInput.value.toLowerCase().trim();
+    const pregunta = botInput.value.toLowerCase().trim();
 
-        if (!pregunta) {
-            botResponse.textContent =
-                "🤖 Escribe una pregunta primero.";
-            return;
-        }
+    if (!pregunta) {
+        botResponse.textContent =
+            "🤖 Escribe algo para preguntarme.";
+        return;
+    }
 
-        if (
-            pregunta.includes("call of duty") ||
-            pregunta.includes("cod")
-        ) {
+    // CALL OF DUTY
+    if (
+        pregunta.includes("call of duty") ||
+        pregunta.includes("cod") ||
+        pregunta.includes("warzone")
+    ) {
 
-            botResponse.textContent =
-                "🤖 Puedo ayudarte con Call of Duty, modos, armas y novedades.";
+        botResponse.textContent =
+            "🔫 ZentryBot: Puedo ayudarte con Call of Duty, Warzone, modos de juego, armas, mapas y consejos.";
 
-        } else if (
-            pregunta.includes("fifa") ||
-            pregunta.includes("fc")
-        ) {
+    // EA SPORTS FC
+    } else if (
+        pregunta.includes("fifa") ||
+        pregunta.includes("fc") ||
+        pregunta.includes("fútbol") ||
+        pregunta.includes("futbol")
+    ) {
 
-            botResponse.textContent =
-                "🤖 Puedo ayudarte con EA SPORTS FC, equipos, jugadores y fútbol.";
+        botResponse.textContent =
+            "⚽ ZentryBot: Puedo ayudarte con EA SPORTS FC, equipos, jugadores, modos y consejos de fútbol.";
 
-        } else if (
-            pregunta.includes("roblox")
-        ) {
+    // ROBLOX
+    } else if (
+        pregunta.includes("roblox")
+    ) {
 
-            botResponse.textContent =
-                "🤖 Puedo ayudarte con Roblox, experiencias y novedades.";
+        botResponse.textContent =
+            "🟥 ZentryBot: Puedo ayudarte con Roblox, experiencias, juegos y novedades.";
 
-        } else {
+    // JUEGOS
+    } else if (
+        pregunta.includes("juegos") ||
+        pregunta.includes("juego")
+    ) {
 
-            botResponse.textContent =
-                "🤖 Todavía estoy aprendiendo. Prueba preguntando sobre Call of Duty, EA SPORTS FC o Roblox.";
+        botResponse.textContent =
+            "🎮 ZentryGames tiene contenido sobre Call of Duty, EA SPORTS FC y Roblox.";
 
-        }
+    // NOTICIAS
+    } else if (
+        pregunta.includes("noticia") ||
+        pregunta.includes("noticias")
+    ) {
+
+        botResponse.textContent =
+            "📰 ZentryBot: Puedes revisar la sección de Noticias para conocer las novedades de ZentryGames.";
+
+    // EVENTOS
+    } else if (
+        pregunta.includes("evento") ||
+        pregunta.includes("torneo")
+    ) {
+
+        botResponse.textContent =
+            "🏆 ZentryBot: Revisa la sección Eventos. Próximamente tendremos torneos y desafíos.";
+
+    // QUIZ
+    } else if (
+        pregunta.includes("quiz") ||
+        pregunta.includes("pregunta")
+    ) {
+
+        botResponse.textContent =
+            "🧠 ZentryBot: ¡Prueba el Zentry Quiz y demuestra cuánto sabes de videojuegos!";
+
+    // SALUDO
+    } else if (
+        pregunta.includes("hola") ||
+        pregunta.includes("hey") ||
+        pregunta.includes("buenas")
+    ) {
+
+        botResponse.textContent =
+            "🤖 ¡Hola, gamer! 👋 Soy ZentryBot. Pregúntame sobre juegos, noticias, eventos o el quiz.";
+
+    // AYUDA
+    } else if (
+        pregunta.includes("ayuda") ||
+        pregunta.includes("qué puedes hacer") ||
+        pregunta.includes("que puedes hacer")
+    ) {
+
+        botResponse.textContent =
+            "🤖 Puedo hablarte sobre 🎮 juegos, 📰 noticias, 🏆 eventos y 🧠 el Zentry Quiz.";
+
+    // NO ENCONTRADO
+    } else {
+
+        botResponse.textContent =
+            "🤖 No entendí esa pregunta todavía. Prueba con: Call of Duty, Roblox, FC, noticias, eventos o quiz.";
 
     }
 
-    botSend.addEventListener("click", responderBot);
-
-    botInput.addEventListener("keydown", (event) => {
-
-        if (event.key === "Enter") {
-            responderBot();
-        }
-
-    });
-
+    // Limpiar campo después de responder
+    botInput.value = "";
 }
 
+botSend.addEventListener("click", responderBot);
+
+botInput.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+        responderBot();
+    }
+
+});
+
+}
 
 // ==============================
 // BUSCADOR
