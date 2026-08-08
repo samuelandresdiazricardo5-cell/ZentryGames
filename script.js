@@ -195,6 +195,7 @@ if (startQuiz && quizArea) {
 
 }
 
+
 // ==============================
 // NOTIFICACIONES
 // ==============================
@@ -204,24 +205,27 @@ function toggleNotifications() {
     const panel = document.getElementById("notificationPanel");
 
     if (!panel) {
-        console.log("❌ No se encontró el panel");
+        console.log("❌ No se encontró el panel de notificaciones");
         return;
     }
 
     panel.classList.toggle("show");
 }
 
+
 const closeNotifications =
     document.getElementById("closeNotifications");
 
-const notificationPanel =
-    document.getElementById("notificationPanel");
-
-if (closeNotifications && notificationPanel) {
+if (closeNotifications) {
 
     closeNotifications.addEventListener("click", function () {
 
-        notificationPanel.classList.remove("show");
+        const panel =
+            document.getElementById("notificationPanel");
+
+        if (panel) {
+            panel.classList.remove("show");
+        }
 
     });
 
