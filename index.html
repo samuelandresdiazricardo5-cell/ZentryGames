@@ -1,61 +1,374 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="ZentryGames - Noticias, guías, eventos y contenido gamer">
+
     <title>ZentryGames 🎮</title>
+
     <link rel="stylesheet" href="style.css">
-</head><body><header>
-    <h1>🎮 ZentryGames</h1>
-    <nav>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        🎮 <span>ZentryGames</span>
+    </div>
+
+    <nav class="nav">
+
         <a href="#inicio">Inicio</a>
-        <a href="#cod">Call of Duty</a>
-        <a href="#fifa">FIFA</a>
-        <a href="#roblox">Roblox</a>
+        <a href="#juegos">Juegos</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#bot">🤖 Bot</a>
+
     </nav>
+
+    <div class="header-actions">
+        <button class="icon-btn" title="Notificaciones">🔔</button>
+        <button class="icon-btn" title="Perfil">👤</button>
+    </div>
+
 </header>
+
 
 <main>
 
+    <!-- HERO -->
+
     <section id="inicio" class="hero">
-        <h2>Bienvenido a ZentryGames</h2>
-        <p>Tu zona gamer de Call of Duty, FIFA y Roblox.</p>
-        <button>🔥 Explorar juegos</button>
+
+        <div class="hero-content">
+
+            <span class="badge">🔥 ZENTRYGAMES</span>
+
+            <h1>
+                El mundo gamer<br>
+                <span>en un solo lugar.</span>
+            </h1>
+
+            <p>
+                Noticias, eventos, guías y contenido sobre
+                Call of Duty, EA SPORTS FC y Roblox.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#juegos" class="btn primary">
+                    🎮 Explorar juegos
+                </a>
+
+                <a href="#noticias" class="btn secondary">
+                    📰 Ver noticias
+                </a>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="games">
-        <h2>🎮 Juegos destacados</h2>
+
+    <!-- JUEGOS -->
+
+    <section id="juegos" class="section">
+
+        <div class="section-title">
+
+            <span>🎮</span>
+
+            <div>
+                <h2>Juegos destacados</h2>
+                <p>Explora nuestro contenido gamer</p>
+            </div>
+
+        </div>
+
 
         <div class="cards">
 
-            <article id="cod" class="card">
-                <div class="icon">🔫</div>
+            <article class="game-card cod">
+
+                <div class="game-icon">🔫</div>
+
                 <h3>Call of Duty</h3>
-                <p>Noticias, modos de juego, armas y novedades.</p>
-                <button>Ver más</button>
+
+                <p>
+                    Noticias, modos de juego, armas,
+                    actualizaciones y guías.
+                </p>
+
+                <button class="card-btn" data-game="Call of Duty">
+                    Explorar →
+                </button>
+
             </article>
 
-            <article id="fifa" class="card">
-                <div class="icon">⚽</div>
-                <h3>FIFA</h3>
-                <p>Fútbol, equipos, jugadores y contenido gamer.</p>
-                <button>Ver más</button>
+
+            <article class="game-card fifa">
+
+                <div class="game-icon">⚽</div>
+
+                <h3>EA SPORTS FC</h3>
+
+                <p>
+                    Fútbol, jugadores, equipos,
+                    novedades y consejos.
+                </p>
+
+                <button class="card-btn" data-game="EA SPORTS FC">
+                    Explorar →
+                </button>
+
             </article>
 
-            <article id="roblox" class="card">
-                <div class="icon">🟥</div>
+
+            <article class="game-card roblox">
+
+                <div class="game-icon">🟥</div>
+
                 <h3>Roblox</h3>
-                <p>Experiencias, juegos y novedades de Roblox.</p>
-                <button>Ver más</button>
+
+                <p>
+                    Experiencias, juegos, novedades
+                    y contenido de Roblox.
+                </p>
+
+                <button class="card-btn" data-game="Roblox">
+                    Explorar →
+                </button>
+
             </article>
 
         </div>
+
+    </section>
+
+
+    <!-- NOTICIAS -->
+
+    <section id="noticias" class="section dark-section">
+
+        <div class="section-title">
+
+            <span>📰</span>
+
+            <div>
+                <h2>Últimas noticias</h2>
+                <p>Próximamente actualizadas automáticamente</p>
+            </div>
+
+        </div>
+
+
+        <div class="news-grid">
+
+            <article class="news-card">
+
+                <span class="news-tag">CALL OF DUTY</span>
+
+                <h3>Noticias y actualizaciones</h3>
+
+                <p>
+                    Aquí aparecerán las novedades más recientes
+                    de Call of Duty.
+                </p>
+
+                <span class="news-date">ZentryGames • Próximamente</span>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <span class="news-tag">EA SPORTS FC</span>
+
+                <h3>Novedades del fútbol</h3>
+
+                <p>
+                    Noticias, eventos y novedades relacionadas
+                    con EA SPORTS FC.
+                </p>
+
+                <span class="news-date">ZentryGames • Próximamente</span>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <span class="news-tag">ROBLOX</span>
+
+                <h3>Noticias de Roblox</h3>
+
+                <p>
+                    Descubre nuevas experiencias y novedades
+                    de Roblox.
+                </p>
+
+                <span class="news-date">ZentryGames • Próximamente</span>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENTOS -->
+
+    <section id="eventos" class="section">
+
+        <div class="section-title">
+
+            <span>📅</span>
+
+            <div>
+                <h2>Eventos</h2>
+                <p>Próximos eventos gamer</p>
+            </div>
+
+        </div>
+
+
+        <div class="event-box">
+
+            <div class="event-icon">📅</div>
+
+            <div>
+
+                <h3>Eventos próximamente</h3>
+
+                <p>
+                    Aquí mostraremos eventos, temporadas,
+                    torneos y actualizaciones importantes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section id="quiz" class="section dark-section">
+
+        <div class="quiz-box">
+
+            <span class="badge">🧠 ZENTRY QUIZ</span>
+
+            <h2>¿Cuánto sabes de videojuegos?</h2>
+
+            <p>
+                Pon a prueba tus conocimientos.
+            </p>
+
+            <button id="startQuiz" class="btn primary">
+                Comenzar quiz
+            </button>
+
+            <div id="quizArea"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ZENTRYBOT -->
+
+    <section id="bot" class="section">
+
+        <div class="bot-box">
+
+            <div class="bot-avatar">
+                🤖
+            </div>
+
+            <div class="bot-content">
+
+                <span class="badge">ZENTRYBOT</span>
+
+                <h2>Tu asistente gamer</h2>
+
+                <p>
+                    Pregunta sobre Call of Duty, EA SPORTS FC
+                    o Roblox.
+                </p>
+
+                <div class="bot-input">
+
+                    <input
+                        id="botInput"
+                        type="text"
+                        placeholder="Escribe una pregunta..."
+                    >
+
+                    <button id="botSend">
+                        Enviar
+                    </button>
+
+                </div>
+
+                <div id="botResponse" class="bot-response"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUSCADOR -->
+
+    <section class="search-section">
+
+        <h2>🔎 Buscar en ZentryGames</h2>
+
+        <div class="search-box">
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="Buscar Call of Duty, Roblox..."
+            >
+
+            <button id="searchButton">
+                Buscar
+            </button>
+
+        </div>
+
+        <div id="searchResult"></div>
+
     </section>
 
 </main>
 
+
 <footer>
-    <p>© 2026 ZentryGames 🎮</p>
+
+    <div class="footer-logo">
+        🎮 ZentryGames
+    </div>
+
+    <p>
+        Tu zona gamer. Noticias, juegos y diversión.
+    </p>
+
+    <p class="copyright">
+        © 2026 ZentryGames
+    </p>
+
 </footer>
+
 
 <script src="script.js"></script>
 
