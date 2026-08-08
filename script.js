@@ -230,3 +230,14 @@ if (closeNotifications && notificationPanel) {
 }
 
 console.log("🔔 Sistema de notificaciones cargado");
+function toggleNotifications() {
+
+    const panel = document.getElementById("notificationPanel");
+
+    if (!panel) {
+        alert("❌ No se encontró el panel de notificaciones");
+        return;
+    }
+
+    panel.classList.toggle("show");
+}
