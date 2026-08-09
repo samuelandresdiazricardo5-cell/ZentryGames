@@ -32,117 +32,122 @@ const botResponse = document.getElementById("botResponse");
 
 if (botInput && botSend && botResponse) {
 
-function responderBot() {
+    function responderBot() {
 
-    const pregunta = botInput.value.toLowerCase().trim();
+        const pregunta = botInput.value.toLowerCase().trim();
 
-    if (!pregunta) {
-        botResponse.textContent =
-            "🤖 Escribe algo para preguntarme.";
-        return;
-    }
-
-    // CALL OF DUTY
-    if (
-        pregunta.includes("call of duty") ||
-        pregunta.includes("cod") ||
-        pregunta.includes("warzone")
-
-function responderBot() {
-
-    const pregunta = botInput.value.toLowerCase().trim();
-
-    if (!pregunta) {
-        botResponse.textContent =
-            "🤖 Escribe una pregunta primero.";
-        return;
-    }
-
-    if (
-        pregunta.includes("call of duty") ||
-        pregunta.includes("cod")
-    ) {
-
-        botResponse.textContent =
-            "🤖 Puedo ayudarte con Call of Duty, modos, armas y novedades.";
-
-    } else if (
-        pregunta.includes("fifa") ||
-        pregunta.includes("fc")
-    ) {
-
-        botResponse.textContent =
-            "🤖 Puedo ayudarte con EA SPORTS FC, equipos, jugadores y fútbol.";
-
-    } else if (
-        pregunta.includes("roblox")
-    ) {
-
-        botResponse.textContent =
-            "🤖 Puedo ayudarte con Roblox, experiencias y novedades.";
-
-    } else {
-
-        botResponse.textContent =
-            "🤖 Todavía estoy aprendiendo. Prueba preguntando sobre Call of Duty, EA SPORTS FC o Roblox.";
-
-    }
-
-}
-    
-    
-// ==============================
-// BUSCADOR
-// ==============================
-
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
-const searchResult = document.getElementById("searchResult");
-
-if (searchInput && searchButton && searchResult) {
-
-    function buscar() {
-
-        const texto = searchInput.value.toLowerCase().trim();
-
-        if (!texto) {
-
-            searchResult.textContent =
-                "🔎 Escribe algo para buscar.";
-
+        if (!pregunta) {
+            botResponse.textContent =
+                "🤖 Escribe algo para preguntarme.";
             return;
         }
 
-        if (texto.includes("call") || texto.includes("cod")) {
+        if (
+            pregunta.includes("hola") ||
+            pregunta.includes("hey") ||
+            pregunta.includes("buenas")
+        ) {
 
-            searchResult.textContent =
-                "🔫 Encontramos contenido relacionado con Call of Duty.";
+            botResponse.textContent =
+                "🤖 ¡Hola, gamer! 👋 Soy ZentryBot. ¿Qué quieres saber?";
 
-        } else if (texto.includes("fifa") || texto.includes("fc")) {
+        } else if (
+            pregunta.includes("juegos") ||
+            pregunta.includes("juego")
+        ) {
 
-            searchResult.textContent =
-                "⚽ Encontramos contenido relacionado con EA SPORTS FC.";
+            botResponse.textContent =
+                "🎮 Actualmente tenemos Call of Duty, EA SPORTS FC y Roblox.";
 
-        } else if (texto.includes("roblox")) {
+        } else if (
+            pregunta.includes("call of duty") ||
+            pregunta.includes("cod") ||
+            pregunta.includes("warzone")
+        ) {
 
-            searchResult.textContent =
-                "🟥 Encontramos contenido relacionado con Roblox.";
+            botResponse.textContent =
+                "🔫 Puedo ayudarte con Call of Duty, Warzone, modos, armas, mapas y consejos.";
+
+        } else if (
+            pregunta.includes("fifa") ||
+            pregunta.includes("ea fc") ||
+            pregunta.includes("fc") ||
+            pregunta.includes("fútbol") ||
+            pregunta.includes("futbol")
+        ) {
+
+            botResponse.textContent =
+                "⚽ Puedo ayudarte con EA SPORTS FC, equipos, jugadores, modos y consejos.";
+
+        } else if (
+            pregunta.includes("roblox")
+        ) {
+
+            botResponse.textContent =
+                "🟥 Puedo ayudarte con Roblox, experiencias, juegos y novedades.";
+
+        } else if (
+            pregunta.includes("noticia") ||
+            pregunta.includes("noticias")
+        ) {
+
+            botResponse.textContent =
+                "📰 Ve a Noticias para descubrir las novedades de ZentryGames.";
+
+        } else if (
+            pregunta.includes("evento") ||
+            pregunta.includes("torneo")
+        ) {
+
+            botResponse.textContent =
+                "🏆 Tenemos eventos próximamente. ¡Prepárate para ZentryGames!";
+
+        } else if (
+            pregunta.includes("quiz")
+        ) {
+
+            botResponse.textContent =
+                "🧠 Ve a Zentry Quiz y demuestra cuánto sabes de videojuegos.";
+
+        } else if (
+            pregunta.includes("quién eres") ||
+            pregunta.includes("quien eres")
+        ) {
+
+            botResponse.textContent =
+                "🤖 Soy ZentryBot, el asistente gamer de ZentryGames.";
+
+        } else if (
+            pregunta.includes("gracias")
+        ) {
+
+            botResponse.textContent =
+                "🤖 ¡De nada, gamer! 🎮";
+
+        } else if (
+            pregunta.includes("ayuda") ||
+            pregunta.includes("comandos")
+        ) {
+
+            botResponse.textContent =
+                "🤖 Prueba: hola, juegos, Call of Duty, Roblox, FC, noticias, eventos, quiz o quién eres.";
 
         } else {
 
-            searchResult.textContent =
-                "❌ No encontramos resultados.";
+            botResponse.textContent =
+                "🤖 No conozco esa pregunta todavía. Escribe 'ayuda' para ver lo que puedo hacer.";
 
         }
 
+        botInput.value = "";
     }
 
-    searchButton.addEventListener("click", buscar);
+    botSend.addEventListener("click", responderBot);
 
-    searchInput.addEventListener("keydown", (event) => {
+    botInput.addEventListener("keydown", (event) => {
 
         if (event.key === "Enter") {
-            buscar();
+            responderBot();
         }
 
     });
