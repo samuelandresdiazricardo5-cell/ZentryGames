@@ -343,3 +343,103 @@ if (modal) {
 }
 
 }
+    
+    
+ // ==============================
+// NOTICIAS — FASE 4
+// ==============================
+
+const newsModal = document.getElementById("newsModal");
+const newsModalContent = document.getElementById("newsModalContent");
+
+function mostrarNoticia(tipo) {
+
+    if (!newsModal || !newsModalContent) {
+        console.error("❌ No se encontró la ventana de noticias");
+        return;
+    }
+
+    const noticias = {
+
+        bienvenida: {
+            titulo: "🔥 Bienvenido a ZentryGames",
+            texto: "ZentryGames comienza una nueva etapa con noticias, juegos, eventos, quizzes y contenido gamer."
+        },
+
+        cod: {
+            titulo: "🔫 Call of Duty",
+            texto: "Aquí encontrarás próximamente información sobre Call of Duty, modos de juego, mapas, armas, guías y novedades."
+        },
+
+        fc: {
+            titulo: "⚽ EA SPORTS FC",
+            texto: "Aquí encontrarás información sobre EA SPORTS FC, equipos, jugadores, modos de juego, consejos y novedades."
+        },
+
+        roblox: {
+            titulo: "🟥 Roblox",
+            texto: "Aquí encontrarás novedades de Roblox, experiencias, juegos y contenido de la comunidad."
+        }
+
+    };
+
+    const noticia = noticias[tipo];
+
+    if (!noticia) {
+        newsModalContent.innerHTML = `
+            <h2>❌ Noticia no encontrada</h2>
+            <p>No encontramos el contenido solicitado.</p>
+        `;
+
+    } else {
+
+        newsModalContent.innerHTML = `
+            <span class="news-tag">📰 ZENTRYGAMES</span>
+
+            <h2>${noticia.titulo}</h2>
+
+            <p>${noticia.texto}</p>
+        `;
+    }
+
+    newsModal.classList.add("show");
+}
+
+
+function cerrarNoticia() {
+
+    if (!newsModal) {
+        console.error("❌ No se encontró la ventana de noticias");
+        return;
+    }
+
+    newsModal.classList.remove("show");
+}
+
+
+// Cerrar al tocar fuera de la ventana
+
+if (newsModal) {
+
+    newsModal.addEventListener("click", function(event) {
+
+        if (event.target === newsModal) {
+            cerrarNoticia();
+        }
+
+    });
+
+}
+
+
+// Cerrar con la tecla ESC
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        cerrarNoticia();
+    }
+
+});
+
+console.log("📰 Sistema de noticias cargado correctamente");
