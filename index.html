@@ -158,83 +158,162 @@
     </section>
 
 
-    <!-- NOTICIAS -->
-    
-<section id="noticias" class="section dark-section"><div class="section-title">
+
+    <!-- ==============================
+     NOTICIAS — FASE 4
+     ============================== --><section id="noticias" class="section dark-section"><div class="section-title">
+
     <span>📰</span>
 
     <div>
         <h2>Últimas noticias</h2>
-        <p>Las novedades más importantes del mundo gamer</p>
+        <p>Las novedades de ZentryGames</p>
     </div>
+
 </div>
+
 
 <div class="news-grid">
 
-    <article class="news-card">
-        <span class="news-tag">🔥 DESTACADO</span>
+    <!-- NOTICIA 1 -->
 
-        <h3>Bienvenido a ZentryGames</h3>
+    <article class="news-card">
+
+        <span class="news-tag">
+            🔥 DESTACADO
+        </span>
+
+        <h3>
+            Bienvenido a ZentryGames
+        </h3>
 
         <p>
-            ZentryGames comienza una nueva etapa con noticias,
-            juegos, eventos, quizzes y contenido gamer.
+            ZentryGames comienza una nueva etapa con
+            contenido sobre videojuegos, noticias,
+            eventos, guías y mucho más.
         </p>
 
         <span class="news-date">
             📅 8 de agosto de 2026
         </span>
+
+        <button class="card-btn news-button"
+                onclick="mostrarNoticia('bienvenida')">
+            Leer noticia →
+        </button>
+
     </article>
 
-    <article class="news-card">
-        <span class="news-tag">🎮 JUEGOS</span>
 
-        <h3>Call of Duty</h3>
+    <!-- NOTICIA 2 -->
+
+    <article class="news-card">
+
+        <span class="news-tag">
+            🔫 CALL OF DUTY
+        </span>
+
+        <h3>
+            Nuevo contenido de Call of Duty
+        </h3>
 
         <p>
-            Próximamente encontrarás aquí novedades,
-            guías, modos de juego y contenido de Call of Duty.
+            Próximamente podrás encontrar aquí
+            información, guías, modos de juego,
+            armas y novedades.
         </p>
 
         <span class="news-date">
-            ZentryGames • Próximamente
+            🎮 Call of Duty
         </span>
+
+        <button class="card-btn news-button"
+                onclick="mostrarNoticia('cod')">
+            Ver contenido →
+        </button>
+
     </article>
 
-    <article class="news-card">
-        <span class="news-tag">⚽ FÚTBOL</span>
 
-        <h3>EA SPORTS FC</h3>
+    <!-- NOTICIA 3 -->
+
+    <article class="news-card">
+
+        <span class="news-tag">
+            ⚽ EA SPORTS FC
+        </span>
+
+        <h3>
+            Todo sobre EA SPORTS FC
+        </h3>
 
         <p>
-            Noticias, jugadores, equipos, eventos y
-            consejos para los amantes del fútbol.
+            Descubre información sobre equipos,
+            jugadores, modos de juego y consejos
+            para mejorar.
         </p>
 
         <span class="news-date">
-            ZentryGames • Próximamente
+            ⚽ EA SPORTS FC
         </span>
+
+        <button class="card-btn news-button"
+                onclick="mostrarNoticia('fc')">
+            Ver contenido →
+        </button>
+
     </article>
 
-    <article class="news-card">
-        <span class="news-tag">🟥 ROBLOX</span>
 
-        <h3>Novedades de Roblox</h3>
+    <!-- NOTICIA 4 -->
+
+    <article class="news-card">
+
+        <span class="news-tag">
+            🟥 ROBLOX
+        </span>
+
+        <h3>
+            Novedades de Roblox
+        </h3>
 
         <p>
-            Descubre experiencias, juegos y novedades
-            de la comunidad de Roblox.
+            Explora experiencias, juegos y contenido
+            creado por la comunidad de Roblox.
         </p>
 
         <span class="news-date">
-            ZentryGames • Próximamente
+            🟥 Roblox
         </span>
+
+        <button class="card-btn news-button"
+                onclick="mostrarNoticia('roblox')">
+            Ver contenido →
+        </button>
+
     </article>
 
 </div>
 
-</section>
 
+<!-- VENTANA DE NOTICIA -->
+
+<div id="newsModal" class="news-modal">
+
+    <div class="news-modal-content">
+
+        <button class="news-close"
+                onclick="cerrarNoticia()">
+            ✕
+        </button>
+
+        <div id="newsModalContent"></div>
+
+    </div>
+
+</div>
+
+     </section>
 
     <!-- EVENTOS -->
     
