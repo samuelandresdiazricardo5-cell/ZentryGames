@@ -266,3 +266,80 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 console.log("🔔 Sistema de notificaciones cargado correctamente"); 
+// ==============================
+// NOTICIAS — FASE 4
+// ==============================
+
+function mostrarNoticia(tipo) {
+
+const modal = document.getElementById("newsModal");
+const contenido = document.getElementById("newsModalContent");
+
+if (!modal || !contenido) {
+    console.log("❌ No se encontró el sistema de noticias.");
+    return;
+}
+
+const noticias = {
+
+    bienvenida: {
+        titulo: "🔥 Bienvenido a ZentryGames",
+        texto:
+            "ZentryGames comienza una nueva etapa con noticias, videojuegos, eventos, quizzes, guías y contenido gamer."
+    },
+
+    cod: {
+        titulo: "🔫 Call of Duty",
+        texto:
+            "Aquí encontrarás información sobre Call of Duty, incluyendo modos de juego, mapas, armas, consejos y futuras novedades."
+    },
+
+    fc: {
+        titulo: "⚽ EA SPORTS FC",
+        texto:
+            "Descubre información sobre EA SPORTS FC, equipos, jugadores, modos de juego y consejos para mejorar."
+    },
+
+    roblox: {
+        titulo: "🟥 Roblox",
+        texto:
+            "Explora información sobre Roblox, experiencias, juegos, creación de contenido y novedades."
+    }
+
+};
+
+const noticia = noticias[tipo];
+
+if (!noticia) {
+    contenido.innerHTML = `
+        <h2>❌ Noticia no encontrada</h2>
+        <p>No pudimos encontrar esta noticia.</p>
+    `;
+} else {
+
+    contenido.innerHTML = `
+        <span class="news-tag">📰 ZENTRYGAMES</span>
+
+        <h2>${noticia.titulo}</h2>
+
+        <p>${noticia.texto}</p>
+
+        <span class="news-date">
+            📅 8 de agosto de 2026
+        </span>
+    `;
+}
+
+modal.classList.add("show");
+
+}
+
+function cerrarNoticia() {
+
+const modal = document.getElementById("newsModal");
+
+if (modal) {
+    modal.classList.remove("show");
+}
+
+}
