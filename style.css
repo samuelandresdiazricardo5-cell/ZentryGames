@@ -1095,3 +1095,149 @@ font-size: 12px;
 }
 
 }
+
+
+/* ==============================
+NOTICIAS — VENTANA
+============================== */
+
+.news-modal {
+
+display: none;
+
+position: fixed;
+
+inset: 0;
+
+z-index: 9998;
+
+align-items: center;
+
+justify-content: center;
+
+padding: 20px;
+
+background: rgba(0, 0, 0, 0.75);
+
+backdrop-filter: blur(8px);
+
+}
+
+.news-modal.show {
+
+display: flex;
+
+}
+
+.news-modal-content {
+
+width: 100%;
+
+max-width: 650px;
+
+padding: 35px;
+
+position: relative;
+
+background: #11141d;
+
+border: 1px solid #00e5ff;
+
+border-radius: 20px;
+
+box-shadow:
+    0 20px 60px rgba(0, 229, 255, 0.12);
+
+animation: newsAppear 0.25s ease;
+
+}
+
+.news-modal-content h2 {
+
+margin: 12px 0;
+
+font-size: 28px;
+
+}
+
+.news-modal-content p {
+
+color: #999;
+
+line-height: 1.7;
+
+}
+
+.news-close {
+
+position: absolute;
+
+top: 12px;
+right: 15px;
+
+width: 35px;
+height: 35px;
+
+border: 1px solid #303646;
+
+border-radius: 8px;
+
+background: #151925;
+
+color: white;
+
+cursor: pointer;
+
+font-size: 16px;
+
+}
+
+.news-close:hover {
+
+border-color: #00e5ff;
+
+color: #00e5ff;
+
+}
+
+.news-button {
+
+margin-top: 15px;
+
+}
+
+@keyframes newsAppear {
+
+from {
+
+    opacity: 0;
+
+    transform: translateY(15px) scale(0.97);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+}
+
+}
+
+@media (max-width: 600px) {
+
+.news-modal-content {
+
+    padding: 28px 20px;
+
+}
+
+.news-modal-content h2 {
+
+    font-size: 23px;
+
+}
+
+}
